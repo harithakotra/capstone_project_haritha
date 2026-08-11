@@ -1,0 +1,187 @@
+
+======================================================================
+Q1: SELECT / WHERE - books priced under £20 (in GBP)
+======================================================================
+SQL:
+SELECT title, price_gbp, price_inr, rating
+            FROM books
+            WHERE price_gbp < 20
+            ORDER BY price_gbp ASC;
+
+title | price_gbp | price_inr | rating
+--------------------------------------
+Wild Voyage 7 | 10.32 | 1088.76 | 2
+Hidden Voyage 23 | 11.61 | 1224.86 | 3
+Quiet Sky 76 | 13.05 | 1376.78 | 3
+Winter Journey 24 | 13.31 | 1404.21 | 5
+Endless Forest 19 | 13.57 | 1431.63 | 2
+Secret Road 30 | 14.55 | 1535.03 | 1
+Endless Portrait 35 | 15.73 | 1659.52 | 5
+Hidden Sky 58 | 16.62 | 1753.41 | 5
+Lost River 31 | 17.64 | 1861.02 | 2
+Distant House 41 | 17.64 | 1861.02 | 2
+Last Letters 37 | 17.91 | 1889.51 | 1
+Wild Letters 60 | 19.52 | 2059.36 | 1
+Shadow Sky 5 | 19.94 | 2103.67 | 5
+(13 row(s) returned)
+
+======================================================================
+Q2: ORDER BY / LIMIT - 10 most expensive books overall
+======================================================================
+SQL:
+SELECT title, price_gbp, price_inr
+            FROM books
+            ORDER BY price_gbp DESC
+            LIMIT 10;
+
+title | price_gbp | price_inr
+-----------------------------
+Quiet Portrait 73 | 59.77 | 6305.74
+Winter Journey 21 | 59.48 | 6275.14
+Winter Garden 71 | 59.27 | 6252.99
+Secret River 12 | 58.66 | 6188.63
+Secret Journey 34 | 58.55 | 6177.02
+Lost Garden 68 | 58.45 | 6166.48
+Last House 75 | 58.44 | 6165.42
+Endless Road 48 | 57.34 | 6049.37
+Secret Chronicle 42 | 56.12 | 5920.66
+Lost Letters 70 | 55.12 | 5815.16
+(10 row(s) returned)
+
+======================================================================
+Q3: DISTINCT - list of distinct category names present in the books table
+======================================================================
+SQL:
+SELECT DISTINCT c.category_name
+            FROM books b
+            JOIN categories c ON b.category_id = c.category_id
+            ORDER BY c.category_name;
+
+category_name
+-------------
+Classics
+Historical Fiction
+Mystery
+Sequential Art
+Travel
+(5 row(s) returned)
+
+======================================================================
+Q4: BETWEEN - books priced between £25 and £45 (inclusive)
+======================================================================
+SQL:
+SELECT title, price_gbp
+            FROM books
+            WHERE price_gbp BETWEEN 25 AND 45
+            ORDER BY price_gbp ASC;
+
+title | price_gbp
+-----------------
+Messy Row 78 | 25.0
+Messy Row 79 | 25.0
+Hidden Forest 22 | 26.21
+Hidden Chronicle 9 | 26.83
+Hidden River 53 | 26.9
+Quiet Letters 8 | 27.01
+Endless Letters 61 | 27.71
+Broken Kingdom 18 | 27.76
+Winter River 10 | 27.95
+Quiet Journey 51 | 29.95
+Silent Harbor 3 | 31.1
+Wild Forest 32 | 31.11
+Lost River 66 | 32.16
+Winter House 6 | 32.46
+Forgotten Sky 52 | 32.57
+Winter Journey 17 | 32.67
+Wild Chronicle 72 | 32.75
+Winter Forest 26 | 32.94
+Broken Letters 69 | 34.28
+Silent Portrait 46 | 34.3
+Endless Portrait 74 | 34.33
+Distant Kingdom 43 | 34.43
+Wild City 39 | 35.38
+Hidden House 64 | 36.81
+Lost Kingdom 14 | 38.87
+Shadow Garden 77 | 39.21
+Last Portrait 28 | 39.23
+Secret House 54 | 39.42
+Winter Letters 33 | 39.79
+Silent Portrait 55 | 41.56
+Silent Garden 67 | 42.61
+(31 row(s) returned)
+
+======================================================================
+Q5: IN - books with a rating of 4 or 5 stars
+======================================================================
+SQL:
+SELECT title, rating, price_gbp
+            FROM books
+            WHERE rating IN (4, 5)
+            ORDER BY rating DESC, price_gbp ASC;
+
+title | rating | price_gbp
+--------------------------
+Winter Journey 24 | 5 | 13.31
+Endless Portrait 35 | 5 | 15.73
+Hidden Sky 58 | 5 | 16.62
+Shadow Sky 5 | 5 | 19.94
+Silent House 4 | 5 | 21.63
+Quiet Portrait 38 | 5 | 23.17
+Silent Sky 13 | 5 | 24.66
+Lost Forest 40 | 5 | 24.92
+Hidden River 53 | 5 | 26.9
+Lost River 66 | 5 | 32.16
+Shadow Garden 77 | 5 | 39.21
+Last Portrait 28 | 5 | 39.23
+Silent Garden 67 | 5 | 42.61
+Hidden City 2 | 5 | 46.82
+Broken House 27 | 5 | 47.25
+Last House 75 | 5 | 58.44
+Winter Journey 21 | 5 | 59.48
+Quiet Portrait 73 | 5 | 59.77
+Quiet Kingdom 25 | 4 | 20.63
+Distant Road 59 | 4 | 22.15
+Secret Portrait 20 | 4 | 22.24
+Secret House 57 | 4 | 23.92
+Endless Letters 61 | 4 | 27.71
+Wild Chronicle 72 | 4 | 32.75
+Winter Letters 33 | 4 | 39.79
+Distant Journey 11 | 4 | 50.36
+Last Sky 49 | 4 | 53.62
+Secret River 12 | 4 | 58.66
+(28 row(s) returned)
+
+======================================================================
+Q6: JOIN - top 3 highest-rated (then cheapest) books per category
+======================================================================
+SQL:
+SELECT c.category_name, b.title, b.rating, b.price_gbp
+            FROM books b
+            JOIN categories c ON b.category_id = c.category_id
+            WHERE (
+                SELECT COUNT(*)
+                FROM books b2
+                WHERE b2.category_id = b.category_id
+                  AND (b2.rating > b.rating
+                       OR (b2.rating = b.rating AND b2.price_gbp < b.price_gbp))
+            ) < 3
+            ORDER BY c.category_name, b.rating DESC, b.price_gbp ASC;
+
+category_name | title | rating | price_gbp
+------------------------------------------
+Classics | Lost River 66 | 5 | 32.16
+Classics | Shadow Garden 77 | 5 | 39.21
+Classics | Silent Garden 67 | 5 | 42.61
+Historical Fiction | Quiet Portrait 38 | 5 | 23.17
+Historical Fiction | Lost Forest 40 | 5 | 24.92
+Historical Fiction | Last Sky 49 | 4 | 53.62
+Mystery | Winter Journey 24 | 5 | 13.31
+Mystery | Endless Portrait 35 | 5 | 15.73
+Mystery | Last Portrait 28 | 5 | 39.23
+Sequential Art | Hidden Sky 58 | 5 | 16.62
+Sequential Art | Hidden River 53 | 5 | 26.9
+Sequential Art | Distant Road 59 | 4 | 22.15
+Travel | Shadow Sky 5 | 5 | 19.94
+Travel | Silent House 4 | 5 | 21.63
+Travel | Silent Sky 13 | 5 | 24.66
+(15 row(s) returned)
