@@ -1,0 +1,80 @@
+title,category,price_gbp,price_inr,rating,in_stock
+Silent Garden 1,Travel,47.08,4966.94,2,1
+Hidden City 2,Travel,46.82,4939.51,5,1
+Silent Harbor 3,Travel,31.1,3281.05,1,1
+Silent House 4,Travel,21.63,2281.96,5,1
+Shadow Sky 5,Travel,19.94,2103.67,5,1
+Winter House 6,Travel,32.46,3424.53,3,1
+Wild Voyage 7,Travel,10.32,1088.76,2,1
+Quiet Letters 8,Travel,27.01,2849.56,2,1
+Hidden Chronicle 9,Travel,26.83,2830.56,1,1
+Winter River 10,Travel,27.95,2948.72,3,1
+Distant Journey 11,Travel,50.36,5312.98,4,1
+Secret River 12,Travel,58.66,6188.63,4,1
+Silent Sky 13,Travel,24.66,2601.63,5,1
+Lost Kingdom 14,Travel,38.87,4100.78,1,1
+Shadow Forest 15,Travel,21.39,2256.64,3,1
+Silent Voyage 16,Travel,21.64,2283.02,1,1
+Winter Journey 17,Travel,32.67,3446.69,3,1
+Broken Kingdom 18,Travel,27.76,2928.68,3,1
+Endless Forest 19,Mystery,13.57,1431.63,2,1
+Secret Portrait 20,Mystery,22.24,2346.32,4,1
+Winter Journey 21,Mystery,59.48,6275.14,5,1
+Hidden Forest 22,Mystery,26.21,2765.16,1,1
+Hidden Voyage 23,Mystery,11.61,1224.86,3,1
+Winter Journey 24,Mystery,13.31,1404.21,5,1
+Quiet Kingdom 25,Mystery,20.63,2176.46,4,1
+Winter Forest 26,Mystery,32.94,3475.17,3,1
+Broken House 27,Mystery,47.25,4984.88,5,1
+Last Portrait 28,Mystery,39.23,4138.76,5,1
+Winter Kingdom 29,Mystery,20.97,2212.34,2,1
+Secret Road 30,Mystery,14.55,1535.03,1,1
+Lost River 31,Mystery,17.64,1861.02,2,1
+Wild Forest 32,Mystery,31.11,3282.11,1,1
+Winter Letters 33,Mystery,39.79,4197.85,4,1
+Secret Journey 34,Mystery,58.55,6177.02,1,1
+Endless Portrait 35,Mystery,15.73,1659.52,5,1
+Wild Journey 36,Mystery,48.43,5109.36,3,1
+Last Letters 37,Historical Fiction,17.91,1889.51,1,1
+Quiet Portrait 38,Historical Fiction,23.17,2444.44,5,1
+Wild City 39,Historical Fiction,35.38,3732.59,1,1
+Lost Forest 40,Historical Fiction,24.92,2629.06,5,1
+Distant House 41,Historical Fiction,17.64,1861.02,2,1
+Secret Chronicle 42,Historical Fiction,56.12,5920.66,1,1
+Distant Kingdom 43,Historical Fiction,34.43,3632.36,1,1
+Golden Voyage 44,Historical Fiction,50.34,5310.87,2,1
+Shadow House 45,Historical Fiction,53.9,5686.45,1,1
+Silent Portrait 46,Historical Fiction,34.3,3618.65,1,1
+Wild Sky 47,Historical Fiction,48.29,5094.6,2,1
+Endless Road 48,Historical Fiction,57.34,6049.37,2,1
+Last Sky 49,Historical Fiction,53.62,5656.91,4,1
+Secret Chronicle 50,Sequential Art,46.5,4905.75,2,1
+Quiet Journey 51,Sequential Art,29.95,3159.72,3,1
+Forgotten Sky 52,Sequential Art,32.57,3436.14,2,1
+Hidden River 53,Sequential Art,26.9,2837.95,5,1
+Secret House 54,Sequential Art,39.42,4158.81,1,1
+Silent Portrait 55,Sequential Art,41.56,4384.58,2,1
+Silent Garden 56,Sequential Art,52.98,5589.39,1,1
+Secret House 57,Sequential Art,23.92,2523.56,4,1
+Hidden Sky 58,Sequential Art,16.62,1753.41,5,1
+Distant Road 59,Sequential Art,22.15,2336.82,4,1
+Wild Letters 60,Sequential Art,19.52,2059.36,1,1
+Endless Letters 61,Sequential Art,27.71,2923.41,4,1
+Forgotten Voyage 62,Sequential Art,46.45,4900.48,1,1
+Shadow Letters 63,Sequential Art,46.41,4896.25,1,1
+Hidden House 64,Classics,36.81,3883.46,2,1
+Winter City 65,Classics,23.93,2524.61,2,1
+Lost River 66,Classics,32.16,3392.88,5,1
+Silent Garden 67,Classics,42.61,4495.35,5,1
+Lost Garden 68,Classics,58.45,6166.48,2,1
+Broken Letters 69,Classics,34.28,3616.54,2,1
+Lost Letters 70,Classics,55.12,5815.16,2,1
+Winter Garden 71,Classics,59.27,6252.99,3,1
+Wild Chronicle 72,Classics,32.75,3455.12,4,1
+Quiet Portrait 73,Classics,59.77,6305.74,5,1
+Endless Portrait 74,Classics,34.33,3621.81,2,1
+Last House 75,Classics,58.44,6165.42,5,1
+Quiet Sky 76,Classics,13.05,1376.78,3,1
+Shadow Garden 77,Classics,39.21,4136.65,5,1
+Messy Row 78,Travel,25.0,2637.5,3,1
+Messy Row 79,Travel,25.0,2637.5,3,0
